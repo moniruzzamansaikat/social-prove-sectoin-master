@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
+:root {
+  --dark-grayesh: hsl(303, 10%, 53%);
+  --light-grayish: hsl(300, 24%, 96%);
+  --white: hsl(0, 0%, 100%);
+  --very-dark-magenta: hsl(300, 43%, 22%);
+  --soft-pink: hsl(333, 80%, 67%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Spartan';
+  font-size: 15px;
+  background: url('./images/bg-pattern-top-desktop.svg'),
+    url('./images/bg-pattern-bottom-desktop.svg');
+  background-position: 0 0, 100px 200px;
+  background-repeat: no-repeat;
+}
+
+/* container */
+.container {
+  max-width: 992px;
+  margin: 0 auto;
+  padding-top: 10rem;
+}
+
+/* top */
+.top {
+  display: grid;
+  grid-template-columns: minmax(200px, 35%) auto;
+}
+
+/* top -left  */
+.top .top-left {
+}
+
+.top .left h1 {
+  font-size: 2rem;
+  color: var(--very-dark-magenta);
+}
+
+.top .left p {
+  color: var(--dark-grayesh);
+  margin-top: 15px;
+  color: var(--very-dark-magenta);
+  font-weight: 500;
+}
+
+/* top -right */
+.top .right {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  padding-left: 6rem;
+}
+
+.top .right .rate-bar {
+  padding: 1.5rem;
+  border-radius: 10px;
+  background: rgb(244 226 248);
+  display: flex;
+  justify-content: space-between;
+  color: var(--white);
+  align-items: center;
+  max-width: 420px;
+  margin: 10px 0;
+  position: relative;
+  font-weight: 700;
+}
+
+.rate-bar p {
+  color: var(--very-dark-magenta);
+  font-family: 'Spartan';
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.stars {
+  color: orange;
+}
+
+.stars i {
+  margin: 0 1px;
+}
+
+.rate-bar.rb-2 {
+  left: 100px;
+}
+
+.rate-bar.rb-3 {
+  left: 200px;
+}
+
+/* cards */
+.cards {
+  margin-top: 2rem;
+  display: flex;
+  height: 250px;
+  margin-bottom: 2rem;
+  align-items: flex-start;
+}
+
+.card {
+  margin: 0 10px;
+  background: var(--very-dark-magenta);
+  padding: 2rem 2rem;
+  color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 0 10px 2px gray;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+}
+
+.card-header .card-person-info {
+  margin-left: 1.6rem;
+}
+
+.card-person-info small {
+  color: var(--soft-pink);
+}
+
+.card-thumb {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.card-body {
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+.card-body p {
+  font-weight: 400;
+  line-height: 1.2rem;
+}
+
+.card:first-child {
+  margin-left: 0;
+}
+
+.card:nth-child(2) {
+  align-self: center;
+}
+
+.card:last-child {
+  align-self: flex-end;
+}
+
+/* media queries */
+@media (max-width: 992px) {
+  .container {
+    margin: 0 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .top {
+    text-align: center;
+    grid-template-columns: 1fr;
+  }
+
+  .right {
+    justify-content: center !important;
+    padding-left: 0 !important;
+    margin-top: 10px;
+  }
+
+  .rate-bar {
+    left: 0 !important;
+    flex-direction: column;
+    padding: 10px 2rem !important;
+  }
+
+  .rate-bar p {
+    margin-top: 10px !important;
+  }
+
+  .cards {
+    flex-wrap: wrap;
+  }
+
+  .card {
+    margin: 1rem 0;
+  }
+}
